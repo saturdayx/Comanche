@@ -16,7 +16,7 @@ public class JwtUtils {
 
 
     public static Claims parseToken(String token){
-        return Jwts.parser().setSigningKey("helloWorld").parseClaimsJws(token.replace("Bearer ","")).getBody();
+        return Jwts.parser().setSigningKey(key).parseClaimsJws(token.replace("Bearer ","")).getBody();
     }
 
     public static String createToken(Authentication authentication) {
